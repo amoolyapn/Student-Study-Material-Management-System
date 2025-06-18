@@ -1,0 +1,33 @@
+{% extends "department.html" %}
+{% block title %}
+Student
+{% endblock title %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+{% block css %}
+<style>
+.row1, .row2 {
+  border: 2px solid lightgray;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 auto;
+  width: 30%;
+  height: 200px;
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+{% endblock css %}
+
+{% block body %}
+<h1 class="h1 text-center display-4 mt-5">SCHEME</h1>
+    <div class="container-fluid text-center  mt-5">
+        <div class="row1  mb-4"><a href="/study_material">Study Material</a></div><br>
+            <div class="row2 mb-4"><a href="/question_paper">Previous Year Question Papers</a></div><br>
+            
+    </div> 
+
+{% endblock body %}

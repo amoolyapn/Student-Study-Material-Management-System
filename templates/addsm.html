@@ -1,0 +1,88 @@
+{% extends 'manages.html' %}
+
+{% block title %}
+Study Material
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+ <h3 class="text-center"><span>Add Study Materials</span> </h3>
+  
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+<br>
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+
+<form action="/addsm" method="post" enctype="multipart/form-data">
+<div class="form-group">
+
+<label for="mid">Material ID</label>
+<input type="text" class="form-control" name="mid" id="mid">
+</div>
+<br>
+<div class="form-group">
+
+<label for="msch">Scheme</label>
+<input type="number" class="form-control" name="msch" id="msch">
+</div>
+<br>
+<div class="form-group">
+
+<label for="mdep">Department</label>
+<input type="text" class="form-control" name="mdep" id="mdep">
+</div>
+<br>
+
+<div class="form-group">
+
+<label for="msem">Semester</label>
+<input type="number" class="form-control" name="msem" id="msem">
+</div>
+<br>
+<div class="form-group">
+<label for="msub">Subject</label>
+<input type="text" class="form-control" name="msub" id="msub">
+</div>
+<div class="form-group">
+    <label for="module">Module</label>
+    <input type="text" class="form-control" name="module" id="module">
+    </div>
+<br>
+<div class="form-group">
+    <label for="file">Upload File </label>
+    <input type="file" class="form-control" name="file" id="file" >    
+</div>
+<br>
+
+<div class="d-grid gap-2">
+    <button type="submit" class="btn btn-info" >Add Record</button>
+</div>
+</form>
+</div>
+
+<br>
+
+</div>
+
+<div class="col-md-4"></div>
+
+</div></div>
+
+
+
+{% endblock body %}
